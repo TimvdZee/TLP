@@ -1,6 +1,4 @@
 <?php
-
-error_reporting(E_ALL);
 # Access data
 $db_server = 'rdbms.strato.de';
 $db_user = 'U3949062';
