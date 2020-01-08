@@ -48,6 +48,8 @@ body {
     text-align: center;
 }
 
+
+
 textarea {
     background-color: #fefae6;
     border: none;
@@ -87,6 +89,23 @@ textarea:focus {
     outline: none;
 }
 
+#terugBtn {
+    border: 0.2em solid black;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    background-color: transparent;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+
+#terugBtn:hover {
+    color: #fefae6;
+    background-color: black;
+}
+
 #verstuurBtn {
     border: 0.2em solid black;
     font-family: 'Rubik', sans-serif;
@@ -95,6 +114,7 @@ textarea:focus {
     background-color: transparent;
     text-align: center;
     transition: 0.3s ease-in-out;
+    vertical-align: text-top;
 }
 
 #verstuurBtn:hover {

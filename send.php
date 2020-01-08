@@ -50,7 +50,9 @@ if($conn){
                         }
                         ?>
                         </div>
-                        <a href="https://www.thelonelyproject.nl" id="verstuurBtn">TERUG</a>
+                        <br>
+                        <br>
+                        <a href="http://thelonelyproject.tvanderzee.nl" id="terugBtn">TERUG</a>
                     </div>
                 </div>
         </section>

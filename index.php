@@ -13,7 +13,7 @@
                     </div>
                     <div class="box-contents">
                         <form id="quote" method="POST" action="send.php">
-                            <textarea form="quote" type="text" name="quote" cols="40" rows="2" placeholder="Vul hier jouw verhaal in over eenzaamheid."></textarea>      
+                            <textarea form="quote" type="text" name="quote" cols="40" rows="4" placeholder="Vul hier jouw verhaal in over eenzaamheid."></textarea>      
                             <input id="nameForm" form="quote" type="text" name="naam" placeholder="Vul hier je voornaam in"><br>
                             <input id="verstuurBtn" type="submit" value="VERSTUUR">
                         </form>
@@ -21,6 +21,5 @@
                 </div>
         </section>
         </aside>
-
     </body>
 </html>

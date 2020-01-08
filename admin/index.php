@@ -60,7 +60,7 @@ if($conn){
                             while($row = $result->fetch_assoc()) {
                                 ?> <div class="fadeIn"> <?php
                                 echo $row["Quote"];?> <br> <?php
-                                echo $row["Naam"];
+                                ?> <?php echo $row["Naam"]; ?> <?php
                                 echo $number_rows;
                                 ?> </div> <?php
                                 
