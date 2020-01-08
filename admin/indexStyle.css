@@ -22,12 +22,6 @@ body {
 
 }
 
-#status {
-    font-family: 'Rubik', sans-serif;
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
 .box-title {
     background: #fefae6 none repeat scroll 0 0;
     display: inline-block;
@@ -40,7 +34,7 @@ body {
 }
 
 .box-contents {
-    position: fixed;
+    position: absolute;
     top: 20%;
     left: 20%;
     right: 20%;
@@ -48,7 +42,7 @@ body {
     text-align: center;
 }
 
-textarea {
+span {
     background-color: #fefae6;
     border: none;
     font-family: 'Reenie Beanie', cursive;
@@ -56,6 +50,22 @@ textarea {
     text-align: center;
     max-height: 80vh;
     resize: none;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .5s ease-in;
+}
+
+.fadeIn {
+    background-color: #fefae6;
+    border: none;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 5em;
+    text-align: center;
+    max-height: 80vh;
+    resize: none;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .5s ease-in;
 }
 
 #nameForm {

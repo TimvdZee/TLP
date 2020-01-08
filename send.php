@@ -13,20 +13,51 @@ if($conn){
 }else{
     echo "Probeer nog een keer";
 }
+?>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="indexStyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <aside id="info-block">
+        <section class="file-marker">
+                <div>
+                    <div class="box-title">
+                        &nbsp;&nbsp;THE LONELY PROJECT&nbsp;&nbsp;
+                    </div>
+                    <div class="box-contents">
+                        <div id="quote">
+                        <?php
+                        // Variabelen voor data
+                        $quote = $_POST['quote'];
+                        $name = $_POST['naam'];
 
-// Variabelen voor data
-$quote = $_POST['quote'];
-$name = $_POST['naam'];
+                        if ($quote == "" || $quote == " " || $name == ""){
+                            ?> <span id="status"><?php echo "Je hebt het niet volledig ingevuld"; ?> </span> <?php
 
-$sql = "INSERT INTO Test (Quote, Naam)
-VALUES ('$quote', '$name')";
+                        }else{
+                            $sql = "INSERT INTO Test (Quote, Naam)
+                            VALUES ('$quote', '$name')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+                            if ($conn->query($sql) === TRUE) {
+                                ?> <span id="status"><?php echo "Dankjewel! \n Je verhaal is verstuurd."; ?> </span> <?php
+                            } else {
+                                echo "Error: " . $sql . "<br>" . $conn->error;
+                            }
 
+                        }
+                        ?>
+                        </div>
+                        <a href="https://www.thelonelyproject.nl" id="verstuurBtn">TERUG</a>
+                    </div>
+                </div>
+        </section>
+        </aside>
+        <?php
 $conn->close();
 
 ?>
+    </body>
+</html>
