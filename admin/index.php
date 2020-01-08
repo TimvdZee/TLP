@@ -7,7 +7,8 @@ $db_name = 'DB3949062';
 # Connection establishment
 
 $conn = mysqli_connect($db_server,$db_user, $db_password, $db_name);
-
+$sql = "SELECT * FROM Test";
+$result = $conn->query($sql);
 $rowcount=mysqli_num_rows($result);
 mysqli_free_result($result);
 
@@ -27,21 +28,19 @@ if($conn){
         <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
-            var php_var = "<?php echo $rowcount; ?>";
+            var php_var = <?php echo $rowcount ?>;
             $(document).ready(function() {
         var i = 0;
         setInterval(function() {
             $(".fadeIn").css("opacity", "0");
             $(".fadeIn:eq("+i+")").css("opacity", "1");
             console.log("interval"+i);
-            if(i == (php_var - 1)) {
-                
+            if(i == (php_var - 1)) {  
             i = 0;
             } else {
             i++;
-            console.log("Count: "+"<?php echo $rowcount; ?>");
             }
-        }, 1000);
+        }, 10000);
         });
         </script>
     </head>
@@ -69,7 +68,9 @@ if($conn){
                         } else {
                             echo "0 results";
                         }
-                                           echo $rowcount;         
+                        $rowcount=mysqli_num_rows($result);
+                        mysqli_free_result($result);
+                                                    
                         ?>
                             
                         </div>
