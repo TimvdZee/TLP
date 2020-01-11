@@ -7,7 +7,7 @@ $db_name = 'DB3949062';
 # Connection establishment
 
 $conn = mysqli_connect($db_server,$db_user, $db_password, $db_name);
-$sql = "SELECT * FROM Test";
+$sql = "SELECT * FROM Quotes";
 $result = $conn->query($sql);
 $rowcount=mysqli_num_rows($result);
 mysqli_free_result($result);
@@ -17,10 +17,7 @@ if($conn){
 }else{
     echo "Probeer nog een keer";
 }
-
-
 ?>
-
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="indexStyle.css">
@@ -54,7 +51,7 @@ if($conn){
                     <div class="box-contents">
                         <div id="quote">
                         <?php
-                        $sql = "SELECT * FROM Test";
+                        $sql = "SELECT * FROM Quotes ORDER BY id DESC";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {

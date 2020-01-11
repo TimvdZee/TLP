@@ -7,6 +7,12 @@ $db_name = 'DB3949062';
 # Connection establishment
 
 $conn = mysqli_connect($db_server,$db_user, $db_password, $db_name);
+$sql = "SELECT * FROM Quotes";
+
+$result = $conn->query($sql);
+$rowcount=mysqli_num_rows($result);
+mysqli_free_result($result);
+
 
 if($conn){
     echo "";
@@ -33,16 +39,22 @@ if($conn){
                         // Variabelen voor data
                         $quote = $_POST['quote'];
                         $name = $_POST['naam'];
+                        if ($rowcount == 0){
+                            $id = 0;
+                        }else{
+                            $id = $rowcount + 1;
+                        }
 
                         if ($quote == "" || $quote == " " || $name == ""){
                             ?> <span id="status"><?php echo "Je hebt het niet volledig ingevuld"; ?> </span> <?php
-
                         }else{
-                            $sql = "INSERT INTO Test (Quote, Naam)
-                            VALUES ('$quote', '$name')";
+                            $sql = "INSERT INTO Quotes (id, Quote, Naam)
+                            VALUES ('$id','$quote', '$name')";
 
                             if ($conn->query($sql) === TRUE) {
-                                ?> <span id="status"><?php echo "Dankjewel! \n Je verhaal is verstuurd."; ?> </span> <?php
+                                ?> <span id="status"><?php echo "Dankjewel! \n Je verhaal is verstuurd."; ?> </span><br> <?php
+                                ?> <span class="val"><?php echo $quote; ?> </span><br> <?php
+                                ?> <span class="val"><?php echo $name; ?> </span> <?php
                             } else {
                                 echo "Error: " . $sql . "<br>" . $conn->error;
                             }

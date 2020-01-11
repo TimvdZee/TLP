@@ -36,7 +36,17 @@ body {
     font-family: 'Rubik', sans-serif;
     font-weight: bold;
     font-size: 2.3em;
+}
 
+.menu-right {
+    background: #fefae6 none repeat scroll 0 0;
+    display: inline-block;
+    padding: 0 2px;
+    margin-right: 2em;
+    text-align: right;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 2.3em;
 }
 
 .box-contents {
@@ -58,6 +68,14 @@ textarea {
     text-align: center;
     max-height: 80vh;
     resize: none;
+}
+
+.val {
+    background-color: #fefae6;
+    border: none;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 5em;
+    text-align: center;
 }
 
 #nameForm {
