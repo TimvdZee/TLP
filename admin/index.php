@@ -56,8 +56,8 @@ if($conn){
                         if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {
                                 ?> <div class="fadeIn"> <?php
-                                echo $row["Quote"];?> <br> <?php
-                                ?> <?php echo $row["Naam"]; ?> <?php
+                                echo $row["Quote"];?> <br><br> <?php
+                                ?>-<?php echo $row["Naam"]; ?> <?php
                                 echo $number_rows;
                                 ?> </div> <?php
                                 
@@ -72,6 +72,7 @@ if($conn){
                             
                         </div>
                     </div>
+                    <img id="qr" src="../images/qr.png"/>
                 </div>
         </section>
         </aside>

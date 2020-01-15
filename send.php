@@ -37,34 +37,40 @@ if($conn){
                         <div id="quote">
                         <?php
                         // Variabelen voor data
-                        $quote = $_POST['quote'];
-                        $name = $_POST['naam'];
+                        $quote = mysqli_real_escape_string($conn, $_POST['quote']);
+                        $name = mysqli_real_escape_string($conn, $_POST['naam']);
                         if ($rowcount == 0){
                             $id = 0;
                         }else{
                             $id = $rowcount + 1;
                         }
-
-                        if ($quote == "" || $quote == " " || $name == ""){
-                            ?> <span id="status"><?php echo "Je hebt het niet volledig ingevuld"; ?> </span> <?php
+                        if (strpos($quote, "DROP") !== false || strpos($quote, "SELECT") !== false || strpos($name, "DROP") !== false || strpos($name, "SELECT") !== false) {
+                            ?> <span id="status"><?php echo "Leuk geprobeerd ;p"; exit; ?> </span> <?php
                         }else{
-                            $sql = "INSERT INTO Quotes (id, Quote, Naam)
-                            VALUES ('$id','$quote', '$name')";
+                            if ($quote == "" || $quote == " " || $name == "" || $name == " "){
+                                ?> <span id="status"><?php echo "Je hebt het niet volledig ingevuld"; ?> </span> <?php
 
-                            if ($conn->query($sql) === TRUE) {
-                                ?> <span id="status"><?php echo "Dankjewel! \n Je verhaal is verstuurd."; ?> </span><br> <?php
-                                ?> <span class="val"><?php echo $quote; ?> </span><br> <?php
-                                ?> <span class="val"><?php echo $name; ?> </span> <?php
-                            } else {
-                                echo "Error: " . $sql . "<br>" . $conn->error;
+                                
+                            }else{
+
+                                $sql = "INSERT INTO Quotes (id, Quote, Naam)
+                                VALUES ('$id','$quote', '$name')";
+
+                                if ($conn->query($sql) === TRUE) {
+                                    ?> <span id="status"><?php echo "Dankjewel! \n Je verhaal is verstuurd."; ?> </span><br> <?php
+                                    ?> <span class="val"><?php echo $quote; ?> </span><br> <?php
+                                    ?> <span class="val"><?php echo $name; ?> </span> <?php
+                                } else {
+                                    echo "Error: " . $sql . "<br>" . $conn->error;
+                                }
+
                             }
-
                         }
                         ?>
                         </div>
                         <br>
                         <br>
-                        <a href="http://thelonelyproject.tvanderzee.nl" id="terugBtn">TERUG</a>
+                        <a href="https://thelonelyproject.nl" id="terugBtn">TERUG</a>
                     </div>
                 </div>
         </section>

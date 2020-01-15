@@ -1,5 +1,5 @@
 body {
-    background-color: #fefae6;
+    background-image: url("images/web.jpg");
     height: 100%;
     width: 100%;
     margin: 0;
@@ -39,7 +39,7 @@ body {
 }
 
 .menu-right {
-    background: #fefae6 none repeat scroll 0 0;
+    background: none repeat scroll 0 0;
     display: inline-block;
     padding: 0 2px;
     margin-right: 2em;
@@ -61,7 +61,7 @@ body {
 
 
 textarea {
-    background-color: #fefae6;
+    background-color: transparent;
     border: none;
     font-family: 'Reenie Beanie', cursive;
     font-size: 5em;
@@ -71,7 +71,7 @@ textarea {
 }
 
 .val {
-    background-color: #fefae6;
+    background-color: transparent;
     border: none;
     font-family: 'Reenie Beanie', cursive;
     font-size: 5em;
@@ -79,7 +79,7 @@ textarea {
 }
 
 #nameForm {
-    background-color: #fefae6;
+    background-color: transparent;
     border: none;
     font-family: 'Reenie Beanie', cursive;
     font-size: 3em;
@@ -120,7 +120,7 @@ textarea:focus {
 }
 
 #terugBtn:hover {
-    color: #fefae6;
+    color: white;
     background-color: black;
 }
 
@@ -136,13 +136,14 @@ textarea:focus {
 }
 
 #verstuurBtn:hover {
-    color: #fefae6;
+    color: white;
     background-color: black;
 }
 
 @media screen and (max-width: 800px) {
     body {
         width: 100%;
+        background-image: url("images/mobiel2.jpg");
     }
 
     textarea {
@@ -160,7 +161,7 @@ textarea:focus {
     }
 
     #nameForm {
-        background-color: #fefae6;
+        background-color: transparent;
         border: none;
         font-family: 'Reenie Beanie', cursive;
         font-size: 3em;
@@ -186,6 +187,7 @@ textarea:focus {
 @media screen and (max-width: 1000px) {
     body {
         width: 100%;
+        background-image: url("images/mobiel1.jpg");
     }
 
     textarea {
@@ -203,7 +205,7 @@ textarea:focus {
     }
 
     #nameForm {
-        background-color: #fefae6;
+        background-color: transparent;
         border: none;
         font-family: 'Reenie Beanie', cursive;
         font-size: 3em;
@@ -229,6 +231,7 @@ textarea:focus {
 @media screen and (max-width: 1100px) {
     body {
         width: 100%;
+        background-image: url("images/mobiel1.jpg");
     }
 
     textarea {
@@ -246,7 +249,7 @@ textarea:focus {
     }
 
     #nameForm {
-        background-color: #fefae6;
+        background-color: transparent;
         border: none;
         font-family: 'Reenie Beanie', cursive;
         font-size: 3em;
